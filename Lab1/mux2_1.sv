@@ -1,4 +1,12 @@
 `timescale 1ns/10ps
+
+// 2:1 multiplexer: passes one of two inputs to the output, chosen by sel.
+// If sel = 0, out = i0. If sel = 1, out = i1.
+// Params:
+//    out - the chosen input
+//    i0  - input passed through when sel = 0
+//    i1  - input passed through when sel = 1
+//    sel - picks which input goes to out
 module mux2_1 (out, i0, i1, sel);
     output logic out;
     input logic i0, i1, sel;

@@ -1,4 +1,17 @@
 `timescale 1ns/10ps;
+
+// 2:4 decoder with enable. Turns a 2-bit number into 4 output lines,
+// where only the line matching the number is 1 (e.g. writereg = 2 -> out = 0100).
+// If regwrite is 0, all outputs are 0.
+// Ports:
+//    out      - 4 output lines, at most one is 1
+//    writereg - 2-bit number picking which output line to turn on
+//    regwrite - enable; must be 1 for any output to turn on
+//input    output    which wire is on
+// 00   -> 0001      group_out[0]  (registers 0-7)
+// 01   -> 0010      group_out[1]  (registers 8-15)
+// 10   -> 0100      group_out[2]  (registers 16-23)
+// 11   -> 1000      group_out[3]  (registers 24-31)
 module decoder2_4(out, writereg, regwrite);
     output logic [3:0] out;
     input logic [1:0] writereg;
@@ -16,6 +29,23 @@ module decoder2_4(out, writereg, regwrite);
     and #delay a3 (out[3], writereg[1], writereg[0], regwrite);
 endmodule
 
+
+// 3:8 decoder with enable. Same idea as decoder2_4, but turns a 3-bit
+// number into 8 output lines (e.g. writereg = 5 -> out[5] = 1).
+// If regwrite is 0, all outputs are 0.
+// Ports:
+//    out      - 8 output lines, at most one is 1
+//    writereg - 3-bit number picking which output line to turn on
+//    regwrite - enable; must be 1 for any output to turn on
+//input    output       which wire is on
+// 000  -> 0000_0001    out[0]
+// 001  -> 0000_0010    out[1]
+// 010  -> 0000_0100    out[2]
+// 011  -> 0000_1000    out[3]
+// 100  -> 0001_0000    out[4]
+// 101  -> 0010_0000    out[5]
+// 110  -> 0100_0000    out[6]
+// 111  -> 1000_0000    out[7]
 module decoder3_8(out, writereg, regwrite);
     output logic [7:0] out;
     input logic [2:0] writereg;
@@ -39,12 +69,27 @@ module decoder3_8(out, writereg, regwrite);
     and #delay a7 (out[7], writereg[2], writereg[1], writereg[0], regwrite);
 endmodule
 
+
+// 5:32 decoder: takes a 5-bit register number and turns on the write-enable
+// line for that register. Built from one 2:4 decoder (top 2 bits pick a group
+// of 8 registers) and four 3:8 decoders (bottom 3 bits pick a register in the group).
+// Ports:
+//      out      - 32 write-enable lines, one per register; at most one bit is 1,
+//                 marking the register to write to
+//      writereg - 5-bit unsigned register number (0-31) to write to
+//      regwrite - enable; if 0, all outputs are 0 and nothing is written.
+//                 If 1, the selected register's line is turned on.
+//input      output                                    which wire is on
+// 00000  -> 0000_0000_0000_0000_0000_0000_0000_0001    out[0]
+// 00001  -> 0000_0000_0000_0000_0000_0000_0000_0010    out[1]
+// ...
+// 10101  -> 0000_0000_0010_0000_0000_0000_0000_0000    out[21]
+// ...
+// 11111  -> 1000_0000_0000_0000_0000_0000_0000_0000    out[31]
 module decoder5_32(out, writereg, regwrite);
     output logic [31:0] out;
     input logic [4:0] writereg;
     input logic regwrite;
-
-    parameter delay = 0.05;
 
     logic [3:0] group_out;
 
@@ -71,6 +116,7 @@ module decoder2_4_testbench();
 		$stop;
 	end
 endmodule
+
 
 module decoder3_8_testbench();
 	logic [2:0] writereg;
