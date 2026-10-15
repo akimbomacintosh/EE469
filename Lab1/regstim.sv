@@ -22,6 +22,30 @@ module regstim();
 	// Force %t's to print in a nice format.
 	initial $timeformat(-9, 2, " ns", 10);
 
+	//--------------------------------- our tests
+
+	task writeReg(input logic [4:0] r, input logic [63:0] data);
+		WriteRegister <= r;
+		WriteData <= data;
+		RegWrite <= 1;
+		@(posedge clk);
+		RegWrite <= 0;
+		@(posedge clk);
+	endtask
+
+	task checkRegs(input logic [4:0] r1, input logic [63:0] exp1,
+	               input logic [4:0] r2, input logic [63:0] exp2);
+		ReadRegister1 <= r1;
+		ReadRegister2 <= r2;
+		@(posedge clk);
+		if (ReadData1 !== exp1)
+			$display("%t ERROR: port 1 X%0d = %h, expected %h", $time, r1, ReadData1, exp1);
+		if (ReadData2 !== exp2)
+			$display("%t ERROR: port 2 X%0d = %h, expected %h", $time, r2, ReadData2, exp2);
+	endtask
+
+	// --------------------------------- end of our tests
+
 	initial begin // Set up the clock
 		clk <= 0;
 		forever #(ClockDelay/2) clk <= ~clk;
@@ -65,7 +89,31 @@ module regstim();
 			WriteRegister <= i;
 			WriteData <= i*64'h0000000000000100+i;
 			@(posedge clk);
+			if (i < 31 && ReadData2 !== i*64'h0000010204080001)
+				$display("%t ERROR: X%0d = %h", $time, i, ReadData2);
+			if (i == 31 && ReadData2 !== 64'b0)
+				$display("%t ERROR: X31 is not 0", $time);
 		end
+
+	// --------------------------------- our tests
+
+		$display("%t Test 1: all 64 bits", $time);
+		writeReg(5, 64'hFFFFFFFFFFFFFFFF);
+		checkRegs(5, 64'hFFFFFFFFFFFFFFFF, 5, 64'hFFFFFFFFFFFFFFFF);
+		writeReg(5, 64'hAAAAAAAAAAAAAAAA);
+		checkRegs(5, 64'hAAAAAAAAAAAAAAAA, 5, 64'hAAAAAAAAAAAAAAAA);
+		writeReg(5, 64'h5555555555555555);
+		checkRegs(5, 64'h5555555555555555, 5, 64'h5555555555555555);
+
+		$display("%t Test 2: neighbors unchanged", $time);
+		checkRegs(4, 4*64'h0000010204080001, 6, 6*64'h0000010204080001);
+
+		$display("%t Test 3: X31 always zero", $time);
+		writeReg(31, 64'hFFFFFFFFFFFFFFFF);
+		checkRegs(31, 64'b0, 31, 64'b0);
+
+		$display("%t Tests finished. No ERROR lines means everything passed.", $time);
+	// --------------------------------- end of our tests
 		$stop;
 	end
 endmodule
