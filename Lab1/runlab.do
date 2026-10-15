@@ -13,9 +13,12 @@ vlog "./regstim.sv"
 
 # Call vsim to invoke simulator
 #     Make sure the last item on the line is the name of the
+<<<<<<< HEAD
 #     testbench module you want to execute. poopie scoop
+=======
+#     testbench module you want to execute. poopie scoopie
+>>>>>>> 54b2e9aae4b0a304cb33329f0b67b378be8c60e2
 vsim -voptargs="+acc" -t 1ps -lib work regstim
-
 # Source the wave do file
 #     This should be the file that sets up the signal window for
 #     the module you are testing.
