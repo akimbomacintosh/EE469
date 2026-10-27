@@ -217,7 +217,7 @@ Z19 !s90 -reportprogress|300|./regfile.sv|
 R5
 vfull_adder
 R1
-Z20 !s110 1793067854
+Z20 !s110 1793073712
 !i10b 1
 !s100 7WM;fek6fZHJ^<Q>cTFI;3
 I^mMU8Pd2DGe81c7_nVQ6:1
@@ -225,7 +225,7 @@ R3
 Z21 !s105 full_adder_sv_unit
 S1
 Z22 dZ:/Documents/EE469/Lab2
-Z23 w1793067694
+Z23 w1793068170
 Z24 8./full_adder.sv
 Z25 F./full_adder.sv
 L0 4
@@ -233,7 +233,7 @@ R4
 r1
 !s85 0
 31
-Z26 !s108 1793067854.000000
+Z26 !s108 1793073712.000000
 Z27 !s107 ./full_adder.sv|
 Z28 !s90 -reportprogress|300|./full_adder.sv|
 !i113 1
@@ -263,14 +263,14 @@ R28
 R5
 vmux2_1
 R1
-R2
+R20
 !i10b 1
 !s100 8f=^PA]6n9T1em`OYEC@]2
 IQfQIPdR3mM>_QnegRjM<V3
 R3
 Z30 !s105 mux2_1_sv_unit
 S1
-R0
+R22
 R8
 Z31 8./mux2_1.sv
 Z32 F./mux2_1.sv
@@ -279,21 +279,21 @@ R4
 r1
 !s85 0
 31
-R11
+R26
 Z33 !s107 ./mux2_1.sv|
 Z34 !s90 -reportprogress|300|./mux2_1.sv|
 !i113 1
 R5
 vmux2_1_testbench
 R1
-R2
+R20
 !i10b 1
 !s100 dOTkhG=H^P7HcV4K>9dI81
 Iak<EzBa0InTPR[aB:LFJQ1
 R3
 R30
 S1
-R0
+R22
 R8
 R31
 R32
@@ -302,7 +302,7 @@ R4
 r1
 !s85 0
 31
-R11
+R26
 R33
 R34
 !i113 1
@@ -374,6 +374,52 @@ r1
 R11
 R18
 R19
+!i113 1
+R5
+vmux8_1
+R1
+R20
+!i10b 1
+!s100 ]?P_[?KR7@Y^E8Tb1C2d=2
+IPAeM^f`1Xg]]BO@>;PN6`1
+R3
+Z40 !s105 mux8_1_sv_unit
+S1
+R22
+Z41 w1793073652
+Z42 8./mux8_1.sv
+Z43 F./mux8_1.sv
+L0 8
+R4
+r1
+!s85 0
+31
+R26
+Z44 !s107 ./mux8_1.sv|
+Z45 !s90 -reportprogress|300|./mux8_1.sv|
+!i113 1
+R5
+vmux8_1_testbench
+R1
+R20
+!i10b 1
+!s100 cHbB:Zl_4TzH>hZg:UN2j1
+IBoK^L0I>F=N3TWhBkiZGG1
+R3
+R40
+S1
+R22
+R41
+R42
+R43
+L0 37
+R4
+r1
+!s85 0
+31
+R26
+R44
+R45
 !i113 1
 R5
 vregfile

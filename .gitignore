@@ -1,1 +1,14 @@
-"Z:\Documents\EE469\slides"
+# macOS
+.DS_Store
+
+# ModelSim / Questa generated files
+work/
+transcript
+*.wlf
+wlft*
+*.bak
+*.vstf
+modelsim.ini
+
+# Course materials and archives (not your code)
+slides/
