@@ -4,21 +4,16 @@ vlib work
 # Compile Verilog
 #     All Verilog files that are part of this design should have
 #     their own "vlog" line below.
-vlog "./d_ff.sv"
-vlog "./mux2_1.sv"
-vlog "./mux32_1.sv"
-vlog "./decoder5_32.sv"
-vlog "./regfile.sv"
-vlog "./regstim.sv"
+vlog "./full_adder.sv"
 
 # Call vsim to invoke simulator
 #     Make sure the last item on the line is the name of the
 #     testbench module you want to execute. poopie scoop
-vsim -voptargs="+acc" -t 1ps -lib work regstim
+vsim -voptargs="+acc" -t 1ps -lib work full_adder_testbench
 # Source the wave do file
 #     This should be the file that sets up the signal window for
 #     the module you are testing.
-do regstim_wave.do
+do full_adder_wave.do
 
 # Set the window types
 view wave
