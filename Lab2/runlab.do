@@ -8,15 +8,16 @@ vlog "./full_adder.sv"
 vlog "./mux2_1.sv"
 vlog "./mux8_1.sv"
 vlog "./alubit.sv"
+vlog "./detectzero.sv"
 
 # Call vsim to invoke simulator
 #     Make sure the last item on the line is the name of the
 #     testbench module you want to execute. poopie scoop
-vsim -voptargs="+acc" -t 1ps -lib work alubit_testbench
+vsim -voptargs="+acc" -t 1ps -lib work detectzero_testbench
 # Source the wave do file
 #     This should be the file that sets up the signal window for
 #     the module you are testing.
-do alubit_wave.do
+do detectzero_wave.do
 
 # Set the window types
 view wave
