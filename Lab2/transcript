@@ -2,13 +2,19 @@
 do runlab.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:18:53 on Oct 26,2026
+# Start time: 23:05:29 on Oct 28,2026
 # vlog -reportprogress 300 ./full_adder.sv 
 # -- Compiling module full_adder
+# ** Error (suppressible): ./full_adder.sv(8): (vlog-2388) 'a' already declared in this scope (full_adder).
+# ** Error: (vlog-13069) ./full_adder.sv(8): near "&": syntax error, unexpected '&', expecting ';' or ','.
+# ** Error: (vlog-13069) ./full_adder.sv(11): near "1": syntax error, unexpected INTEGER NUMBER, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER or '('.
+# ** Error: (vlog-13069) ./full_adder.sv(12): near "1": syntax error, unexpected INTEGER NUMBER, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER or '('.
+# ** Error: (vlog-13069) ./full_adder.sv(13): near "2": syntax error, unexpected INTEGER NUMBER, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER or '('.
+# ** Error: (vlog-13069) ./full_adder.sv(14): near "3": syntax error, unexpected INTEGER NUMBER, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER or '('.
+# ** Error: (vlog-13069) ./full_adder.sv(15): near "1": syntax error, unexpected INTEGER NUMBER, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER or '('.
 # -- Compiling module full_adder_testbench
-# ** Error: (vlog-13069) ./full_adder.sv(18): near ":": syntax error, unexpected ':', expecting ';'.
-# End time: 19:18:53 on Oct 26,2026, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 0
+# End time: 23:05:30 on Oct 28,2026, Elapsed time: 0:00:01
+# Errors: 7, Warnings: 0
 # ** Error: C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
 # Error in macro ./runlab.do line 7
 # C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
@@ -17,13 +23,17 @@ do runlab.do
 do runlab.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:19:15 on Oct 26,2026
+# Start time: 23:06:23 on Oct 28,2026
 # vlog -reportprogress 300 ./full_adder.sv 
 # -- Compiling module full_adder
+# ** Error: (vlog-13069) ./full_adder.sv(11): near "1": syntax error, unexpected INTEGER NUMBER, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER or '('.
+# ** Error: (vlog-13069) ./full_adder.sv(12): near "1": syntax error, unexpected INTEGER NUMBER, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER or '('.
+# ** Error: (vlog-13069) ./full_adder.sv(13): near "2": syntax error, unexpected INTEGER NUMBER, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER or '('.
+# ** Error: (vlog-13069) ./full_adder.sv(14): near "3": syntax error, unexpected INTEGER NUMBER, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER or '('.
+# ** Error: (vlog-13069) ./full_adder.sv(15): near "1": syntax error, unexpected INTEGER NUMBER, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER or '('.
 # -- Compiling module full_adder_testbench
-# ** Error: (vlog-13069) ./full_adder.sv(18): near ":": syntax error, unexpected ':', expecting ';'.
-# End time: 19:19:15 on Oct 26,2026, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 0
+# End time: 23:06:23 on Oct 28,2026, Elapsed time: 0:00:00
+# Errors: 5, Warnings: 0
 # ** Error: C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
 # Error in macro ./runlab.do line 7
 # C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
@@ -32,239 +42,150 @@ do runlab.do
 do runlab.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:19:33 on Oct 26,2026
+# Start time: 23:07:37 on Oct 28,2026
 # vlog -reportprogress 300 ./full_adder.sv 
 # -- Compiling module full_adder
+# ** Error: (vlog-13069) ./full_adder.sv(11): near "1": syntax error, unexpected INTEGER NUMBER, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER or '('.
+# ** Error: (vlog-13069) ./full_adder.sv(12): near "1": syntax error, unexpected INTEGER NUMBER, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER or '('.
+# ** Error: (vlog-13069) ./full_adder.sv(13): near "2": syntax error, unexpected INTEGER NUMBER, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER or '('.
+# ** Error: (vlog-13069) ./full_adder.sv(14): near "3": syntax error, unexpected INTEGER NUMBER, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER or '('.
+# ** Error: (vlog-13069) ./full_adder.sv(15): near "1": syntax error, unexpected INTEGER NUMBER, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER or '('.
 # -- Compiling module full_adder_testbench
-# 
-# Top level modules:
-# 	full_adder_testbench
-# End time: 19:19:33 on Oct 26,2026, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vsim -voptargs=""+acc"" -t 1ps -lib work full_adder 
-# Start time: 19:19:35 on Oct 26,2026
-# Loading sv_std.std
-# Loading work.full_adder
-# ** Error: Cannot open macro file: full_adder_wave.do
-# Error in macro ./runlab.do line 16
-# Cannot open macro file: full_adder_wave.do
+# End time: 23:07:37 on Oct 28,2026, Elapsed time: 0:00:00
+# Errors: 5, Warnings: 0
+# ** Error: C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./runlab.do line 7
+# C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
 #     while executing
-# "do full_adder_wave.do"
-add wave -position end  sim:/full_adder/sum
-add wave -position end  sim:/full_adder/cout
-add wave -position end  sim:/full_adder/a
-add wave -position end  sim:/full_adder/b
-add wave -position end  sim:/full_adder/cin
-add wave -position end  sim:/full_adder/ab
-add wave -position end  sim:/full_adder/acin
-add wave -position end  sim:/full_adder/bcin
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf Z:/Documents/EE469/Lab2/full_adder_wave.do
+# "vlog "./full_adder.sv""
 do runlab.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:21:43 on Oct 26,2026
+# Start time: 23:11:23 on Oct 28,2026
 # vlog -reportprogress 300 ./full_adder.sv 
 # -- Compiling module full_adder
 # -- Compiling module full_adder_testbench
 # 
 # Top level modules:
 # 	full_adder_testbench
-# End time: 19:21:43 on Oct 26,2026, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 19:21:44 on Oct 26,2026, Elapsed time: 0:02:09
-# Errors: 3, Warnings: 0
-# vsim -voptargs=""+acc"" -t 1ps -lib work full_adder 
-# Start time: 19:21:44 on Oct 26,2026
-# Loading sv_std.std
-# Loading work.full_adder
-# .main_pane.wave.interior.cs.body.pw.wf
-# .main_pane.structure.interior.cs.body.struct
-# .main_pane.objects.interior.cs.body.tree
-do runlab.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:23:05 on Oct 26,2026
-# vlog -reportprogress 300 ./full_adder.sv 
-# -- Compiling module full_adder
-# -- Compiling module full_adder_testbench
-# 
-# Top level modules:
-# 	full_adder_testbench
-# End time: 19:23:05 on Oct 26,2026, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 19:23:06 on Oct 26,2026, Elapsed time: 0:01:22
-# Errors: 0, Warnings: 0
-# vsim -voptargs=""+acc"" -t 1ps -lib work full_adder_testbench 
-# Start time: 19:23:06 on Oct 26,2026
-# Loading sv_std.std
-# Loading work.full_adder_testbench
-# Loading work.full_adder
-# ** Error: (vish-4014) No objects found matching '/full_adder/sum'.
-# Executing ONERROR command at macro ./full_adder_wave.do line 3
-# ** Error: (vish-4014) No objects found matching '/full_adder/cout'.
-# Executing ONERROR command at macro ./full_adder_wave.do line 4
-# ** Error: (vish-4014) No objects found matching '/full_adder/a'.
-# Executing ONERROR command at macro ./full_adder_wave.do line 5
-# ** Error: (vish-4014) No objects found matching '/full_adder/b'.
-# Executing ONERROR command at macro ./full_adder_wave.do line 6
-# ** Error: (vish-4014) No objects found matching '/full_adder/cin'.
-# Executing ONERROR command at macro ./full_adder_wave.do line 7
-# ** Error: (vish-4014) No objects found matching '/full_adder/ab'.
-# Executing ONERROR command at macro ./full_adder_wave.do line 8
-# ** Error: (vish-4014) No objects found matching '/full_adder/acin'.
-# Executing ONERROR command at macro ./full_adder_wave.do line 9
-# ** Error: (vish-4014) No objects found matching '/full_adder/bcin'.
-# Executing ONERROR command at macro ./full_adder_wave.do line 10
-# .main_pane.wave.interior.cs.body.pw.wf
-# .main_pane.structure.interior.cs.body.struct
-# .main_pane.objects.interior.cs.body.tree
-# ** Note: $stop    : ./full_adder.sv(30)
-#    Time: 80 ns  Iteration: 0  Instance: /full_adder_testbench
-# Break in Module full_adder_testbench at ./full_adder.sv line 30
-do runlab.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:24:14 on Oct 26,2026
-# vlog -reportprogress 300 ./full_adder.sv 
-# -- Compiling module full_adder
-# -- Compiling module full_adder_testbench
-# 
-# Top level modules:
-# 	full_adder_testbench
-# End time: 19:24:14 on Oct 26,2026, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 19:24:15 on Oct 26,2026, Elapsed time: 0:01:09
-# Errors: 24, Warnings: 0
-# vsim -voptargs=""+acc"" -t 1ps -lib work full_adder_testbench 
-# Start time: 19:24:15 on Oct 26,2026
-# Loading sv_std.std
-# Loading work.full_adder_testbench
-# Loading work.full_adder
-# .main_pane.wave.interior.cs.body.pw.wf
-# .main_pane.structure.interior.cs.body.struct
-# .main_pane.objects.interior.cs.body.tree
-# ** Note: $stop    : ./full_adder.sv(30)
-#    Time: 80 ns  Iteration: 0  Instance: /full_adder_testbench
-# Break in Module full_adder_testbench at ./full_adder.sv line 30
-do runlab.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 20:59:35 on Oct 26,2026
-# vlog -reportprogress 300 ./full_adder.sv 
-# -- Compiling module full_adder
-# -- Compiling module full_adder_testbench
-# 
-# Top level modules:
-# 	full_adder_testbench
-# End time: 20:59:35 on Oct 26,2026, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 20:59:36 on Oct 26,2026, Elapsed time: 1:35:21
-# Errors: 0, Warnings: 0
-# vsim -voptargs=""+acc"" -t 1ps -lib work mux8_1_testbench 
-# Start time: 20:59:36 on Oct 26,2026
-# ** Error: (vsim-3170) Could not find 'mux8_1_testbench'.
-#         Searched libraries:
-#             Z:/Documents/EE469/Lab2/work
-# Error loading design
-# Error: Error loading design
-#        Pausing macro execution
-# MACRO ./runlab.do PAUSED at line 12
-do runlab.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 21:01:05 on Oct 26,2026
-# vlog -reportprogress 300 ./full_adder.sv 
-# -- Compiling module full_adder
-# -- Compiling module full_adder_testbench
-# 
-# Top level modules:
-# 	full_adder_testbench
-# End time: 21:01:05 on Oct 26,2026, Elapsed time: 0:00:00
+# End time: 23:11:23 on Oct 28,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 21:01:05 on Oct 26,2026
+# Start time: 23:11:23 on Oct 28,2026
 # vlog -reportprogress 300 ./mux2_1.sv 
 # -- Compiling module mux2_1
 # -- Compiling module mux2_1_testbench
 # 
 # Top level modules:
 # 	mux2_1_testbench
-# End time: 21:01:05 on Oct 26,2026, Elapsed time: 0:00:00
+# End time: 23:11:23 on Oct 28,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 21:01:05 on Oct 26,2026
+# Start time: 23:11:23 on Oct 28,2026
 # vlog -reportprogress 300 ./mux8_1.sv 
 # -- Compiling module mux8_1
 # -- Compiling module mux8_1_testbench
 # 
 # Top level modules:
 # 	mux8_1_testbench
-# End time: 21:01:05 on Oct 26,2026, Elapsed time: 0:00:00
+# End time: 23:11:23 on Oct 28,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vsim -voptargs=""+acc"" -t 1ps -lib work mux8_1_testbench 
-# Start time: 20:59:36 on Oct 26,2026
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:11:23 on Oct 28,2026
+# vlog -reportprogress 300 ./alubit.sv 
+# -- Compiling module alubit
+# -- Compiling module alubit_testbench
+# 
+# Top level modules:
+# 	alubit_testbench
+# End time: 23:11:23 on Oct 28,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work alubit_testbench 
+# Start time: 23:11:24 on Oct 28,2026
 # Loading sv_std.std
-# Loading work.mux8_1_testbench
+# Loading work.alubit_testbench
+# Loading work.alubit
+# Loading work.full_adder
 # Loading work.mux8_1
 # Loading work.mux2_1
-# ** Error: Cannot open macro file: mux8_1_testbench_wave.do
-# Error in macro ./runlab.do line 18
-# Cannot open macro file: mux8_1_testbench_wave.do
+# ** Error: Cannot open macro file: alubit_wave.do
+# Error in macro ./runlab.do line 19
+# Cannot open macro file: alubit_wave.do
 #     while executing
-# "do mux8_1_testbench_wave.do"
-add wave -position end  sim:/mux8_1_testbench/i
-add wave -position end  sim:/mux8_1_testbench/sel
-add wave -position end  sim:/mux8_1_testbench/out
-add wave -position end  sim:/mux8_1_testbench/j
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf Z:/Documents/EE469/Lab2/mux8_1_testbench_wave.do
+# "do alubit_wave.do"
+add wave -position end  sim:/alubit_testbench/a
+add wave -position end  sim:/alubit_testbench/b
+add wave -position end  sim:/alubit_testbench/carryIn
+add wave -position end  sim:/alubit_testbench/control
+add wave -position end  sim:/alubit_testbench/result
+add wave -position end  sim:/alubit_testbench/carryOut
+add wave -position end  sim:/alubit_testbench/i
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: joshuahall  Hostname: JOSHUAHALL658C  ProcessID: 2236
+#           Attempting to use alternate WLF file "./wlftxq3xgb".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftxq3xgb
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf Z:/Documents/EE469/Lab2/alubit_wave.do
 do runlab.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 21:01:52 on Oct 26,2026
+# Start time: 23:11:47 on Oct 28,2026
 # vlog -reportprogress 300 ./full_adder.sv 
 # -- Compiling module full_adder
 # -- Compiling module full_adder_testbench
 # 
 # Top level modules:
 # 	full_adder_testbench
-# End time: 21:01:52 on Oct 26,2026, Elapsed time: 0:00:00
+# End time: 23:11:47 on Oct 28,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 21:01:52 on Oct 26,2026
+# Start time: 23:11:47 on Oct 28,2026
 # vlog -reportprogress 300 ./mux2_1.sv 
 # -- Compiling module mux2_1
 # -- Compiling module mux2_1_testbench
 # 
 # Top level modules:
 # 	mux2_1_testbench
-# End time: 21:01:52 on Oct 26,2026, Elapsed time: 0:00:00
+# End time: 23:11:47 on Oct 28,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 21:01:52 on Oct 26,2026
+# Start time: 23:11:47 on Oct 28,2026
 # vlog -reportprogress 300 ./mux8_1.sv 
 # -- Compiling module mux8_1
 # -- Compiling module mux8_1_testbench
 # 
 # Top level modules:
 # 	mux8_1_testbench
-# End time: 21:01:52 on Oct 26,2026, Elapsed time: 0:00:00
+# End time: 23:11:47 on Oct 28,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# End time: 21:01:53 on Oct 26,2026, Elapsed time: 0:02:17
-# Errors: 4, Warnings: 0
-# vsim -voptargs=""+acc"" -t 1ps -lib work mux8_1_testbench 
-# Start time: 21:01:53 on Oct 26,2026
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:11:47 on Oct 28,2026
+# vlog -reportprogress 300 ./alubit.sv 
+# -- Compiling module alubit
+# -- Compiling module alubit_testbench
+# 
+# Top level modules:
+# 	alubit_testbench
+# End time: 23:11:48 on Oct 28,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# End time: 23:11:48 on Oct 28,2026, Elapsed time: 0:00:24
+# Errors: 3, Warnings: 2
+# vsim -voptargs=""+acc"" -t 1ps -lib work alubit_testbench 
+# Start time: 23:11:48 on Oct 28,2026
 # Loading sv_std.std
-# Loading work.mux8_1_testbench
+# Loading work.alubit_testbench
+# Loading work.alubit
+# Loading work.full_adder
 # Loading work.mux8_1
 # Loading work.mux2_1
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: joshuahall  Hostname: JOSHUAHALL658C  ProcessID: 2236
+#           Attempting to use alternate WLF file "./wlft84jwz3".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft84jwz3
 # .main_pane.wave.interior.cs.body.pw.wf
 # .main_pane.structure.interior.cs.body.struct
 # .main_pane.objects.interior.cs.body.tree
-# ** Note: $stop    : ./mux8_1.sv(56)
-#    Time: 160 ns  Iteration: 0  Instance: /mux8_1_testbench
-# Break in Module mux8_1_testbench at ./mux8_1.sv line 56
-# ** Error: ambiguous command name "s": sbrk scale scaleTime scan sccom sccom_capture scgenmod scintilla scope scrollbar sdfcom search searchlog see seek seetime selection send_and_receive sequence_image set setCoverageCutoff setMTIArrayProperty setMTIProperty setStructBackground setStructForeground setStructGeometry setStructSelectBackground setStructSelectForeground setTimeFlags setVSIMClient set_vsim_state set_window_namespace set_windowobj_namespace setenv settings0 shape shift show showAssertion showFCover siginterror signals_subelement_split sim_image slave_mode sm smodule_image snapshot_allowed snapshot_apply snapshot_cancel snapshot_dialog snapshot_dialog_enable snapshot_filename snapshot_initialize snapshot_restart snapshot_size snapshot_take snapshot_time socket source source_examine_popup source_highlight_errors source_select_all spice_du_image spinbox split splitio sqlite sqlite3 stCopy stCut stDelete stPaste startIndProgressBar starter status statusIntHandler step stimulus_image stop stopIndProgressBar stop_image string string'reverse strncmp structure_binding structure_changed_trigger structure_clear_triggers structure_click_env structure_context_trigger structure_dataset_close structure_destroy structure_image structure_is_follow structure_new_root_dialog structure_restart structure_restart_context structure_restart_prep structure_set_root structure_set_selection structure_set_triggers structure_update_procs_after_run student_edition subTime subst suppress sva_cover_image sva_coverbin_image swapSeparators switch sync_encoding systemc_image systemcdu_image systemclib_image
-# Error in macro ./runlab.do line 29
-# ambiguous command name "s": sbrk scale scaleTime scan sccom sccom_capture scgenmod scintilla scope scrollbar sdfcom search searchlog see seek seetime selection send_and_receive sequence_image set setCoverageCutoff setMTIArrayProperty setMTIProperty setStructBackground setStructForeground setStructGeometry setStructSelectBackground setStructSelectForeground setTimeFlags setVSIMClient set_vsim_state set_window_namespace set_windowobj_namespace setenv settings0 shape shift show showAssertion showFCover siginterror signals_subelement_split sim_image slave_mode sm smodule_image snapshot_allowed snapshot_apply snapshot_cancel snapshot_dialog snapshot_dialog_enable snapshot_filename snapshot_initialize snapshot_restart snapshot_size snapshot_take snapshot_time socket source source_examine_popup source_highlight_errors source_select_all spice_du_image spinbox split splitio sqlite sqlite3 stCopy stCut stDelete stPaste startIndProgressBar starter status statusIntHandler step stimulus_image stop stopIndProgressBar stop_image string string'reverse strncmp structure_binding structure_changed_trigger structure_clear_triggers structure_click_env structure_context_trigger structure_dataset_close structure_destroy structure_image structure_is_follow structure_new_root_dialog structure_restart structure_restart_context structure_restart_prep structure_set_root structure_set_selection structure_set_triggers structure_update_procs_after_run student_edition subTime subst suppress sva_cover_image sva_coverbin_image swapSeparators switch sync_encoding systemc_image systemcdu_image systemclib_image
-#     while executing
-# "s"
+# ** Note: $stop    : ./alubit.sv(50)
+#    Time: 640 ns  Iteration: 0  Instance: /alubit_testbench
+# Break in Module alubit_testbench at ./alubit.sv line 50
