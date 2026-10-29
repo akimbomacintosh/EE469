@@ -32,7 +32,7 @@ module alubit (result, carryOut, a, b, carryIn, control);
     assign choices[6] = xorOut; // 110 XOR
     assign choices[7] = 1'b0; // 111 UNUSED
 
-    mux8_1 mux (.out(result), .i(choices), .sel(control)); // selects the output based on the control signal
+    mux8_1 mux (.out(result), .i(choices), .sel(control)); // selects the alu output based on the control signal
 endmodule
 
 module alubit_testbench();
