@@ -27,7 +27,6 @@ module full_adder (sum, cout, a, b, carryIn);
     // Calculation of sum (the sum of the current a and b bits)
     xor #delay xor1 (sum, a, b, carryIn);
 
-    //Calculation of cout (whether there is overflow, given the above equation)
     and #delay a1 (aAndb, a, b);
     and #delay a2 (acarryIn, a, carryIn);
     and #delay a3 (bcarryIn, b, carryIn);

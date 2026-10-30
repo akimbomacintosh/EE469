@@ -7,7 +7,6 @@
 //    - A: The 64 bit register A to operate on.
 //    - B: The 64 bit register B to operate on. 
 //    - control: The 3 control bits that select which operation to send to result. 
-//      - 000: result = B; 010: A + B; 011: A - B; 100: A & B; 101: A | B; 110: A xor B
 // Outputs:
 //    - result: The 64 bit result of the selected operation.
 //    - negative: 1 if result is negative when read as 2's comp (result[63] = 1), 0 otherwise.
@@ -19,19 +18,19 @@ module alu (A, B, control, result, negative, zero, overflow, carryOut);
     input logic [2:0] control;
     output logic [63:0] result;
     output logic negative, zero, overflow, carryOut;
-    parameter delay = 0.05; // 0.05 ns = 50 ps (required gate delay)
+    parameter delay = 0.05;
 
     // 65-bit carryOut array that determines if carryOut is true.
-    //   If carries[64] = 1, then the carryOut flag is 1 (carryOut of slice 63).
-    //   This array is 65 bits long instead of 64 because you need a place to store carryOut[63].
+    //   If carries[64] = 1, then the carryOut flag is 1 (carryOut of bit 63)
+    //   This array is 65 bits long instead of 64 because you need a place to store carryOut[63]
     logic [64:0] carries;
 
     // For subtraction (control[0] = 1), A - B = A + not(B) + 1. Each alubit already inverts b
-    //    when control[0] = 1, so the "+ 1" comes from assigning control[0] into the first carry in.
-    //    This works well in our code because we didn't code to include an edge case for slice 0.
+    //    when control[0] = 1, so the "+ 1" comes from assigning control[0] into the first carry in
+    //    This works well in our code because we didn't code to include an edge case for slice 0
     assign carries[0] = control[0];
 
-    // Build the 64 alubit slices, chaining each carryOut into the next slice's carryIn
+    // Build the 64 alubit slices, linking each carryOut into the next slice's carryIn
     genvar i;
     generate
         for (i = 0; i < 64; i++) begin : slices
@@ -40,16 +39,16 @@ module alu (A, B, control, result, negative, zero, overflow, carryOut);
         end
     endgenerate
 
-    // Assign carryOut flag: the carry out of most significant slice.
+    // Assign carryOut flag: the carry out of most significant slice
     assign carryOut = carries[64];
 
-    // Assign overflow flag: 2's comp overflow when carryIn to MSB differs from carryOut of MSB.
+    // Assign overflow flag: 2's comp overflow when carryIn to MSB differs from carryOut of MSB
     xor #delay overflowXOR (overflow, carries[63], carries[64]);
 
-    // Assign negative flag: The sign bit of the result = MSB of result.
+    // Assign negative flag: The sign bit of the result = MSB of result
     assign negative = result[63];
 
-    // Assigns zero flag: 1 only if every bit of result is 0.
+    // Assigns zero flag: 1 only if every bit of result is 0
     detectzero zeroCheck (.zero(zero), .in(result));
 endmodule
 

@@ -2,17 +2,17 @@
 
 // This module computes every operation in parallel (logic gates, pass-B, adder) and then uses the 8:1 MUX
 //   and control bits to select which operation to send to result.
-// Example: Slice i takes ai, bi, the carryIni, and the shared control bits, and produces resulti.
+// Example: Slice i takes ai, bi, the carryIni, and the shared control bits, and produces resulti
 //    and the carryOut (ci + 1).
 // Parameters:
 //    - a: The ith bit of register a to operate on.
 //    - b: The ith bit of register b to operate on.
 //    - carryIn: A 0 or 1, representing if cout(i - 1) had a carry out bit. 
-//    - control: The 3 control bits that tell the MUX which input to send to result. 
-//      - control[0] is used to determine whether you need to add or "subtract".
+//    - control: The 3 control bits that tell the MUX which input to send to result
+//      - control[0] is used to determine whether you need to add or "subtract"
 // Outputs: 
 //    - result: The ith bit of result, which will be modified using the input parameters. 
-//    - carryOut: A 0 or 1 representing whether there was "overflow" on the addition of a, b, and carryIn.
+//    - carryOut: A 0 or 1 representing whether there was "overflow" on the addition of a, b, and carryIn
 module alubit (result, carryOut, a, b, carryIn, control);
     output logic result, carryOut;
     input logic a, b, carryIn;
@@ -34,7 +34,6 @@ module alubit (result, carryOut, a, b, carryIn, control);
     // flips b if control[0] is 1 to pass into the adder for subtraction
     xor #delay bInvert (toggleSub, b, control[0]); 
 
-    // addition or subtraction
     // performs addition or subtraction of a and b based on the value of control[0]
     full_adder adder (.sum(sum), .cout(carryOut), .a(a), .b(toggleSub), .carryIn(carryIn)); 
 

@@ -32,7 +32,6 @@ module detectzero (zero, in);
     endgenerate
 
     // Final or gate to check the outputs of the second level
-    // The "zero" output will be true if all of the result bits were 0.
     nor #delay or3 (zero, level2[0], level2[1], level2[2], level2[3]);
 endmodule
 

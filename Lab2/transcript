@@ -1,404 +1,367 @@
 # Reading C:/intelFPGA/17.0/modelsim_ase/tcl/vsim/pref.tcl
-do runlab.do
+do runlab.do 
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:05:29 on Oct 28,2026
-# vlog -reportprogress 300 ./full_adder.sv 
-# -- Compiling module full_adder
-# ** Error (suppressible): ./full_adder.sv(8): (vlog-2388) 'a' already declared in this scope (full_adder).
-# ** Error: (vlog-13069) ./full_adder.sv(8): near "&": syntax error, unexpected '&', expecting ';' or ','.
-# ** Error: (vlog-13069) ./full_adder.sv(11): near "1": syntax error, unexpected INTEGER NUMBER, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER or '('.
-# ** Error: (vlog-13069) ./full_adder.sv(12): near "1": syntax error, unexpected INTEGER NUMBER, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER or '('.
-# ** Error: (vlog-13069) ./full_adder.sv(13): near "2": syntax error, unexpected INTEGER NUMBER, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER or '('.
-# ** Error: (vlog-13069) ./full_adder.sv(14): near "3": syntax error, unexpected INTEGER NUMBER, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER or '('.
-# ** Error: (vlog-13069) ./full_adder.sv(15): near "1": syntax error, unexpected INTEGER NUMBER, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER or '('.
-# -- Compiling module full_adder_testbench
-# End time: 23:05:30 on Oct 28,2026, Elapsed time: 0:00:01
-# Errors: 7, Warnings: 0
-# ** Error: C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
-# Error in macro ./runlab.do line 7
-# C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
-#     while executing
-# "vlog "./full_adder.sv""
-do runlab.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:06:23 on Oct 28,2026
-# vlog -reportprogress 300 ./full_adder.sv 
-# -- Compiling module full_adder
-# ** Error: (vlog-13069) ./full_adder.sv(11): near "1": syntax error, unexpected INTEGER NUMBER, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER or '('.
-# ** Error: (vlog-13069) ./full_adder.sv(12): near "1": syntax error, unexpected INTEGER NUMBER, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER or '('.
-# ** Error: (vlog-13069) ./full_adder.sv(13): near "2": syntax error, unexpected INTEGER NUMBER, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER or '('.
-# ** Error: (vlog-13069) ./full_adder.sv(14): near "3": syntax error, unexpected INTEGER NUMBER, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER or '('.
-# ** Error: (vlog-13069) ./full_adder.sv(15): near "1": syntax error, unexpected INTEGER NUMBER, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER or '('.
-# -- Compiling module full_adder_testbench
-# End time: 23:06:23 on Oct 28,2026, Elapsed time: 0:00:00
-# Errors: 5, Warnings: 0
-# ** Error: C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
-# Error in macro ./runlab.do line 7
-# C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
-#     while executing
-# "vlog "./full_adder.sv""
-do runlab.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:07:37 on Oct 28,2026
-# vlog -reportprogress 300 ./full_adder.sv 
-# -- Compiling module full_adder
-# ** Error: (vlog-13069) ./full_adder.sv(11): near "1": syntax error, unexpected INTEGER NUMBER, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER or '('.
-# ** Error: (vlog-13069) ./full_adder.sv(12): near "1": syntax error, unexpected INTEGER NUMBER, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER or '('.
-# ** Error: (vlog-13069) ./full_adder.sv(13): near "2": syntax error, unexpected INTEGER NUMBER, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER or '('.
-# ** Error: (vlog-13069) ./full_adder.sv(14): near "3": syntax error, unexpected INTEGER NUMBER, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER or '('.
-# ** Error: (vlog-13069) ./full_adder.sv(15): near "1": syntax error, unexpected INTEGER NUMBER, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER or '('.
-# -- Compiling module full_adder_testbench
-# End time: 23:07:37 on Oct 28,2026, Elapsed time: 0:00:00
-# Errors: 5, Warnings: 0
-# ** Error: C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
-# Error in macro ./runlab.do line 7
-# C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
-#     while executing
-# "vlog "./full_adder.sv""
-do runlab.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:11:23 on Oct 28,2026
+# Start time: 10:57:21 on Oct 30,2026
 # vlog -reportprogress 300 ./full_adder.sv 
 # -- Compiling module full_adder
 # -- Compiling module full_adder_testbench
 # 
 # Top level modules:
 # 	full_adder_testbench
-# End time: 23:11:23 on Oct 28,2026, Elapsed time: 0:00:00
+# End time: 10:57:21 on Oct 30,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:11:23 on Oct 28,2026
+# Start time: 10:57:21 on Oct 30,2026
 # vlog -reportprogress 300 ./mux2_1.sv 
 # -- Compiling module mux2_1
 # -- Compiling module mux2_1_testbench
 # 
 # Top level modules:
 # 	mux2_1_testbench
-# End time: 23:11:23 on Oct 28,2026, Elapsed time: 0:00:00
+# End time: 10:57:21 on Oct 30,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:11:23 on Oct 28,2026
+# Start time: 10:57:21 on Oct 30,2026
 # vlog -reportprogress 300 ./mux8_1.sv 
 # -- Compiling module mux8_1
 # -- Compiling module mux8_1_testbench
 # 
 # Top level modules:
 # 	mux8_1_testbench
-# End time: 23:11:23 on Oct 28,2026, Elapsed time: 0:00:00
+# End time: 10:57:21 on Oct 30,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:11:23 on Oct 28,2026
+# Start time: 10:57:21 on Oct 30,2026
 # vlog -reportprogress 300 ./alubit.sv 
 # -- Compiling module alubit
 # -- Compiling module alubit_testbench
 # 
 # Top level modules:
 # 	alubit_testbench
-# End time: 23:11:23 on Oct 28,2026, Elapsed time: 0:00:00
+# End time: 10:57:21 on Oct 30,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vsim -voptargs=""+acc"" -t 1ps -lib work alubit_testbench 
-# Start time: 23:11:24 on Oct 28,2026
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 10:57:21 on Oct 30,2026
+# vlog -reportprogress 300 ./detectzero.sv 
+# -- Compiling module detectzero
+# -- Compiling module detectzero_testbench
+# 
+# Top level modules:
+# 	detectzero_testbench
+# End time: 10:57:21 on Oct 30,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 10:57:22 on Oct 30,2026
+# vlog -reportprogress 300 ./alu.sv 
+# -- Compiling module alu
+# -- Compiling module alu_testbench
+# 
+# Top level modules:
+# 	alu_testbench
+# End time: 10:57:22 on Oct 30,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 10:57:22 on Oct 30,2026
+# vlog -reportprogress 300 ./alustim.sv 
+# -- Compiling module alustim
+# 
+# Top level modules:
+# 	alustim
+# End time: 10:57:22 on Oct 30,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work alu_testbench 
+# Start time: 10:57:23 on Oct 30,2026
 # Loading sv_std.std
-# Loading work.alubit_testbench
+# Loading work.alu_testbench
+# Loading work.alu
+# Loading work.detectzero
 # Loading work.alubit
 # Loading work.full_adder
 # Loading work.mux8_1
 # Loading work.mux2_1
-# ** Error: Cannot open macro file: alubit_wave.do
-# Error in macro ./runlab.do line 19
-# Cannot open macro file: alubit_wave.do
+# ** Error: Cannot open macro file: alu_wave.do
+# Error in macro ./runlab.do line 22
+# Cannot open macro file: alu_wave.do
 #     while executing
-# "do alubit_wave.do"
-add wave -position end  sim:/alubit_testbench/a
-add wave -position end  sim:/alubit_testbench/b
-add wave -position end  sim:/alubit_testbench/carryIn
-add wave -position end  sim:/alubit_testbench/control
-add wave -position end  sim:/alubit_testbench/result
-add wave -position end  sim:/alubit_testbench/carryOut
-add wave -position end  sim:/alubit_testbench/i
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: joshuahall  Hostname: JOSHUAHALL658C  ProcessID: 2236
-#           Attempting to use alternate WLF file "./wlftxq3xgb".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftxq3xgb
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf Z:/Documents/EE469/Lab2/alubit_wave.do
+# "do alu_wave.do"
+add wave -position end  sim:/alu_testbench/A
+add wave -position end  sim:/alu_testbench/B
+add wave -position end  sim:/alu_testbench/result
+add wave -position end  sim:/alu_testbench/control
+add wave -position end  sim:/alu_testbench/negative
+add wave -position end  sim:/alu_testbench/zero
+add wave -position end  sim:/alu_testbench/overflow
+add wave -position end  sim:/alu_testbench/carryOut
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf Z:/Documents/EE469/Lab2/alu_wave.do
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf Z:/Documents/EE469/Lab2/alu_wave.do
 do runlab.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:11:47 on Oct 28,2026
+# Start time: 10:57:59 on Oct 30,2026
 # vlog -reportprogress 300 ./full_adder.sv 
 # -- Compiling module full_adder
 # -- Compiling module full_adder_testbench
 # 
 # Top level modules:
 # 	full_adder_testbench
-# End time: 23:11:47 on Oct 28,2026, Elapsed time: 0:00:00
+# End time: 10:57:59 on Oct 30,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:11:47 on Oct 28,2026
+# Start time: 10:57:59 on Oct 30,2026
 # vlog -reportprogress 300 ./mux2_1.sv 
 # -- Compiling module mux2_1
 # -- Compiling module mux2_1_testbench
 # 
 # Top level modules:
 # 	mux2_1_testbench
-# End time: 23:11:47 on Oct 28,2026, Elapsed time: 0:00:00
+# End time: 10:57:59 on Oct 30,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:11:47 on Oct 28,2026
+# Start time: 10:57:59 on Oct 30,2026
 # vlog -reportprogress 300 ./mux8_1.sv 
 # -- Compiling module mux8_1
 # -- Compiling module mux8_1_testbench
 # 
 # Top level modules:
 # 	mux8_1_testbench
-# End time: 23:11:47 on Oct 28,2026, Elapsed time: 0:00:00
+# End time: 10:57:59 on Oct 30,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:11:47 on Oct 28,2026
+# Start time: 10:57:59 on Oct 30,2026
 # vlog -reportprogress 300 ./alubit.sv 
 # -- Compiling module alubit
 # -- Compiling module alubit_testbench
 # 
 # Top level modules:
 # 	alubit_testbench
-# End time: 23:11:48 on Oct 28,2026, Elapsed time: 0:00:01
+# End time: 10:57:59 on Oct 30,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# End time: 23:11:48 on Oct 28,2026, Elapsed time: 0:00:24
-# Errors: 3, Warnings: 2
-# vsim -voptargs=""+acc"" -t 1ps -lib work alubit_testbench 
-# Start time: 23:11:48 on Oct 28,2026
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 10:57:59 on Oct 30,2026
+# vlog -reportprogress 300 ./detectzero.sv 
+# -- Compiling module detectzero
+# -- Compiling module detectzero_testbench
+# 
+# Top level modules:
+# 	detectzero_testbench
+# End time: 10:57:59 on Oct 30,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 10:57:59 on Oct 30,2026
+# vlog -reportprogress 300 ./alu.sv 
+# -- Compiling module alu
+# -- Compiling module alu_testbench
+# 
+# Top level modules:
+# 	alu_testbench
+# End time: 10:57:59 on Oct 30,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 10:57:59 on Oct 30,2026
+# vlog -reportprogress 300 ./alustim.sv 
+# -- Compiling module alustim
+# 
+# Top level modules:
+# 	alustim
+# End time: 10:57:59 on Oct 30,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 10:58:00 on Oct 30,2026, Elapsed time: 0:00:37
+# Errors: 3, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work alu_testbench 
+# Start time: 10:58:00 on Oct 30,2026
 # Loading sv_std.std
-# Loading work.alubit_testbench
+# Loading work.alu_testbench
+# Loading work.alu
+# Loading work.detectzero
 # Loading work.alubit
 # Loading work.full_adder
 # Loading work.mux8_1
 # Loading work.mux2_1
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: joshuahall  Hostname: JOSHUAHALL658C  ProcessID: 2236
-#           Attempting to use alternate WLF file "./wlft84jwz3".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft84jwz3
 # .main_pane.wave.interior.cs.body.pw.wf
 # .main_pane.structure.interior.cs.body.struct
 # .main_pane.objects.interior.cs.body.tree
-# ** Note: $stop    : ./alubit.sv(50)
-#    Time: 640 ns  Iteration: 0  Instance: /alubit_testbench
-# Break in Module alubit_testbench at ./alubit.sv line 50
+# ** Note: $stop    : ./alu.sv(115)
+#    Time: 1280 ns  Iteration: 0  Instance: /alu_testbench
+# Break in Module alu_testbench at ./alu.sv line 115
+add wave -position end  sim:/alu_testbench/i
 do runlab.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:02:05 on Oct 29,2026
+# Start time: 11:02:04 on Oct 30,2026
 # vlog -reportprogress 300 ./full_adder.sv 
 # -- Compiling module full_adder
 # -- Compiling module full_adder_testbench
 # 
 # Top level modules:
 # 	full_adder_testbench
-# End time: 13:02:05 on Oct 29,2026, Elapsed time: 0:00:00
+# End time: 11:02:04 on Oct 30,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:02:05 on Oct 29,2026
+# Start time: 11:02:04 on Oct 30,2026
 # vlog -reportprogress 300 ./mux2_1.sv 
 # -- Compiling module mux2_1
 # -- Compiling module mux2_1_testbench
 # 
 # Top level modules:
 # 	mux2_1_testbench
-# End time: 13:02:05 on Oct 29,2026, Elapsed time: 0:00:00
+# End time: 11:02:04 on Oct 30,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:02:05 on Oct 29,2026
+# Start time: 11:02:04 on Oct 30,2026
 # vlog -reportprogress 300 ./mux8_1.sv 
 # -- Compiling module mux8_1
 # -- Compiling module mux8_1_testbench
 # 
 # Top level modules:
 # 	mux8_1_testbench
-# End time: 13:02:05 on Oct 29,2026, Elapsed time: 0:00:00
+# End time: 11:02:04 on Oct 30,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:02:05 on Oct 29,2026
+# Start time: 11:02:04 on Oct 30,2026
 # vlog -reportprogress 300 ./alubit.sv 
 # -- Compiling module alubit
 # -- Compiling module alubit_testbench
 # 
 # Top level modules:
 # 	alubit_testbench
-# End time: 13:02:05 on Oct 29,2026, Elapsed time: 0:00:00
+# End time: 11:02:04 on Oct 30,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:02:06 on Oct 29,2026
+# Start time: 11:02:05 on Oct 30,2026
 # vlog -reportprogress 300 ./detectzero.sv 
 # -- Compiling module detectzero
 # -- Compiling module detectzero_testbench
 # 
 # Top level modules:
 # 	detectzero_testbench
-# End time: 13:02:06 on Oct 29,2026, Elapsed time: 0:00:00
+# End time: 11:02:05 on Oct 30,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# End time: 13:02:07 on Oct 29,2026, Elapsed time: 13:50:19
-# Errors: 0, Warnings: 2
-# vsim -voptargs=""+acc"" -t 1ps -lib work detectzero_testbench 
-# Start time: 13:02:07 on Oct 29,2026
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 11:02:05 on Oct 30,2026
+# vlog -reportprogress 300 ./alu.sv 
+# -- Compiling module alu
+# -- Compiling module alu_testbench
+# 
+# Top level modules:
+# 	alu_testbench
+# End time: 11:02:05 on Oct 30,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 11:02:05 on Oct 30,2026
+# vlog -reportprogress 300 ./alustim.sv 
+# -- Compiling module alustim
+# 
+# Top level modules:
+# 	alustim
+# End time: 11:02:05 on Oct 30,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 11:02:05 on Oct 30,2026, Elapsed time: 0:04:05
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work alu_testbench 
+# Start time: 11:02:05 on Oct 30,2026
 # Loading sv_std.std
-# Loading work.detectzero_testbench
+# Loading work.alu_testbench
+# Loading work.alu
 # Loading work.detectzero
-# ** Error: Cannot open macro file: detectzero_wave.do
-# Error in macro ./runlab.do line 20
-# Cannot open macro file: detectzero_wave.do
-#     while executing
-# "do detectzero_wave.do"
-add wave -position end  sim:/detectzero_testbench/in
-add wave -position end  sim:/detectzero_testbench/zero
-add wave -position end  sim:/detectzero_testbench/i
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: joshuahall  Hostname: JOSHUAHALL658C  ProcessID: 2236
-#           Attempting to use alternate WLF file "./wlftg6sbv3".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftg6sbv3
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf Z:/Documents/EE469/Lab2/detectzero_wave.do
+# Loading work.alubit
+# Loading work.full_adder
+# Loading work.mux8_1
+# Loading work.mux2_1
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./alu.sv(115)
+#    Time: 1280 ns  Iteration: 0  Instance: /alu_testbench
+# Break in Module alu_testbench at ./alu.sv line 115
+add wave -position end  sim:/alu_testbench/i
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf Z:/Documents/EE469/Lab2/alu_wave.do
 do runlab.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:02:30 on Oct 29,2026
+# Start time: 11:02:22 on Oct 30,2026
 # vlog -reportprogress 300 ./full_adder.sv 
 # -- Compiling module full_adder
 # -- Compiling module full_adder_testbench
 # 
 # Top level modules:
 # 	full_adder_testbench
-# End time: 13:02:30 on Oct 29,2026, Elapsed time: 0:00:00
+# End time: 11:02:22 on Oct 30,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:02:30 on Oct 29,2026
+# Start time: 11:02:22 on Oct 30,2026
 # vlog -reportprogress 300 ./mux2_1.sv 
 # -- Compiling module mux2_1
 # -- Compiling module mux2_1_testbench
 # 
 # Top level modules:
 # 	mux2_1_testbench
-# End time: 13:02:30 on Oct 29,2026, Elapsed time: 0:00:00
+# End time: 11:02:22 on Oct 30,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:02:30 on Oct 29,2026
+# Start time: 11:02:22 on Oct 30,2026
 # vlog -reportprogress 300 ./mux8_1.sv 
 # -- Compiling module mux8_1
 # -- Compiling module mux8_1_testbench
 # 
 # Top level modules:
 # 	mux8_1_testbench
-# End time: 13:02:31 on Oct 29,2026, Elapsed time: 0:00:01
+# End time: 11:02:22 on Oct 30,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:02:31 on Oct 29,2026
+# Start time: 11:02:22 on Oct 30,2026
 # vlog -reportprogress 300 ./alubit.sv 
 # -- Compiling module alubit
 # -- Compiling module alubit_testbench
 # 
 # Top level modules:
 # 	alubit_testbench
-# End time: 13:02:31 on Oct 29,2026, Elapsed time: 0:00:00
+# End time: 11:02:22 on Oct 30,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:02:31 on Oct 29,2026
+# Start time: 11:02:22 on Oct 30,2026
 # vlog -reportprogress 300 ./detectzero.sv 
 # -- Compiling module detectzero
 # -- Compiling module detectzero_testbench
 # 
 # Top level modules:
 # 	detectzero_testbench
-# End time: 13:02:31 on Oct 29,2026, Elapsed time: 0:00:00
+# End time: 11:02:22 on Oct 30,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# End time: 13:02:31 on Oct 29,2026, Elapsed time: 0:00:24
-# Errors: 3, Warnings: 2
-# vsim -voptargs=""+acc"" -t 1ps -lib work detectzero_testbench 
-# Start time: 13:02:31 on Oct 29,2026
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 11:02:22 on Oct 30,2026
+# vlog -reportprogress 300 ./alu.sv 
+# -- Compiling module alu
+# -- Compiling module alu_testbench
+# 
+# Top level modules:
+# 	alu_testbench
+# End time: 11:02:23 on Oct 30,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 11:02:23 on Oct 30,2026
+# vlog -reportprogress 300 ./alustim.sv 
+# -- Compiling module alustim
+# 
+# Top level modules:
+# 	alustim
+# End time: 11:02:23 on Oct 30,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 11:02:23 on Oct 30,2026, Elapsed time: 0:00:18
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work alu_testbench 
+# Start time: 11:02:23 on Oct 30,2026
 # Loading sv_std.std
-# Loading work.detectzero_testbench
+# Loading work.alu_testbench
+# Loading work.alu
 # Loading work.detectzero
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: joshuahall  Hostname: JOSHUAHALL658C  ProcessID: 2236
-#           Attempting to use alternate WLF file "./wlftrkkedr".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftrkkedr
+# Loading work.alubit
+# Loading work.full_adder
+# Loading work.mux8_1
+# Loading work.mux2_1
 # .main_pane.wave.interior.cs.body.pw.wf
 # .main_pane.structure.interior.cs.body.struct
 # .main_pane.objects.interior.cs.body.tree
-# ** Note: $stop    : ./detectzero.sv(46)
-#    Time: 660 ns  Iteration: 0  Instance: /detectzero_testbench
-# Break in Module detectzero_testbench at ./detectzero.sv line 46
-do runlab.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:04:41 on Oct 29,2026
-# vlog -reportprogress 300 ./full_adder.sv 
-# -- Compiling module full_adder
-# -- Compiling module full_adder_testbench
-# 
-# Top level modules:
-# 	full_adder_testbench
-# End time: 13:04:41 on Oct 29,2026, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:04:41 on Oct 29,2026
-# vlog -reportprogress 300 ./mux2_1.sv 
-# -- Compiling module mux2_1
-# -- Compiling module mux2_1_testbench
-# 
-# Top level modules:
-# 	mux2_1_testbench
-# End time: 13:04:41 on Oct 29,2026, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:04:41 on Oct 29,2026
-# vlog -reportprogress 300 ./mux8_1.sv 
-# -- Compiling module mux8_1
-# -- Compiling module mux8_1_testbench
-# 
-# Top level modules:
-# 	mux8_1_testbench
-# End time: 13:04:41 on Oct 29,2026, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:04:41 on Oct 29,2026
-# vlog -reportprogress 300 ./alubit.sv 
-# -- Compiling module alubit
-# -- Compiling module alubit_testbench
-# 
-# Top level modules:
-# 	alubit_testbench
-# End time: 13:04:41 on Oct 29,2026, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:04:41 on Oct 29,2026
-# vlog -reportprogress 300 ./detectzero.sv 
-# -- Compiling module detectzero
-# -- Compiling module detectzero_testbench
-# 
-# Top level modules:
-# 	detectzero_testbench
-# End time: 13:04:41 on Oct 29,2026, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 13:04:42 on Oct 29,2026, Elapsed time: 0:02:11
-# Errors: 0, Warnings: 2
-# vsim -voptargs=""+acc"" -t 1ps -lib work detectzero_testbench 
-# Start time: 13:04:42 on Oct 29,2026
-# Loading sv_std.std
-# Loading work.detectzero_testbench
-# Loading work.detectzero
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: joshuahall  Hostname: JOSHUAHALL658C  ProcessID: 2236
-#           Attempting to use alternate WLF file "./wlftzy7rra".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftzy7rra
-# .main_pane.wave.interior.cs.body.pw.wf
-# .main_pane.structure.interior.cs.body.struct
-# .main_pane.objects.interior.cs.body.tree
-# ** Note: $stop    : ./detectzero.sv(48)
-#    Time: 670 ns  Iteration: 0  Instance: /detectzero_testbench
-# Break in Module detectzero_testbench at ./detectzero.sv line 48
+# ** Note: $stop    : ./alu.sv(115)
+#    Time: 1280 ns  Iteration: 0  Instance: /alu_testbench
+# Break in Module alu_testbench at ./alu.sv line 115
