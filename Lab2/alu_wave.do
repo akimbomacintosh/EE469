@@ -3,11 +3,11 @@ quietly WaveActivateNextPane {} 0
 add wave -noupdate /alu_testbench/A
 add wave -noupdate /alu_testbench/B
 add wave -noupdate /alu_testbench/result
-add wave -noupdate /alu_testbench/control
+add wave -noupdate /alu_testbench/cntrl
 add wave -noupdate /alu_testbench/negative
 add wave -noupdate /alu_testbench/zero
 add wave -noupdate /alu_testbench/overflow
-add wave -noupdate /alu_testbench/carryOut
+add wave -noupdate /alu_testbench/carry_out
 add wave -noupdate /alu_testbench/i
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {{Cursor 1} {0 ps} 0}
