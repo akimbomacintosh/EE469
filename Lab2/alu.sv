@@ -14,7 +14,7 @@
 //    - zero: 1 if all 64 bits are 0, 0 otherwise.
 //    - overflow: 1 if an add or subtract overflowed when read as 2's comp, 0 otherwise.
 //    - carryOut: 1 if an add or subtract produced a carry out of bit 63, 0 otherwise.
-module alu (a, b, control, result, negative, zero, overflow, carryOut);
+module alu (A, B, control, result, negative, zero, overflow, carryOut);
     input logic [63:0] A, B;
     input logic [2:0] control;
     output logic [63:0] result;
@@ -50,7 +50,7 @@ module alu (a, b, control, result, negative, zero, overflow, carryOut);
     assign negative = result[63];
 
     // Assigns zero flag: 1 only if every bit of result is 0.
-    detectzero zeroCheck = (.zero(zero), .in(result));
+    detectzero zeroCheck (.zero(zero), .in(result));
 endmodule
 
 
@@ -59,9 +59,9 @@ module alu_testbench();
     logic [2:0] control;
     logic negative, zero, overflow, carryOut;
 
-    alu dut (.A, .B, .control, .result, .negative. zero. overflow. carryOut);
+    alu dut (.A, .B, .control, .result, .negative, .zero, .overflow, .carryOut);
 
-    integer i
+    integer i;
     initial begin
         // Run 8 edge cases through every operation (each operation runs in parallel for each test below):
         // 1 + 1, max positive + 1 (overflow), 0 - 1 (negative), 1 - 1 (zero), all 1's + 1 (carryOut)
@@ -76,7 +76,7 @@ module alu_testbench();
 
             // Test 2: A = max positive (2^63 - 1), B = 1
             // ADD: result = 0x8000...0; negative = 1. overflow = 1 (+ plus + = -);
-                    carryOut = 0;
+            //       carryOut = 0;
             // SUB: result = 0x7FFF...E. carryOut = 1; overflow = 0;
             A = 64'h7FFF_FFFF_FFFF_FFFF; B = 64'h0000_0000_0000_0001; #20;
 
