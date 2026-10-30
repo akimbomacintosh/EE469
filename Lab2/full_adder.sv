@@ -11,8 +11,8 @@
 //    - sum: The sum of the ith (current) a and b bits. 
 //    - cout: 1 if there is a carry out when you add a and b, 0 otherwise.
 // Scenarios: 
-//    - If a and b = 1, and cin = 0, then sum = 0 and cout = 1 (because there was "overflow")
-//    - If a and b = 0, and cin = 1, then sum = 1 and cout = 0 (because no "overflow")
+//    - If a and b = 1, and cin = 0, then sum = 0 and cout = 1
+//    - If a and b = 0, and cin = 1, then sum = 1 and cout = 0
 module full_adder (sum, cout, a, b, carryIn);
     output logic sum, cout;
     input logic a, b, carryIn;
@@ -30,7 +30,8 @@ module full_adder (sum, cout, a, b, carryIn);
     and #delay a1 (aAndb, a, b);
     and #delay a2 (acarryIn, a, carryIn);
     and #delay a3 (bcarryIn, b, carryIn);
-    or #delay o1 (cout, aAndb, acarryIn, bcarryIn); // carry out is true if a and b are true or a and carryIn are true or b and carryIn are true
+    // carry out is true if a and b are true or a and carryIn are true or b and carryIn are true
+    or #delay o1 (cout, aAndb, acarryIn, bcarryIn);
 endmodule
 
 module full_adder_testbench();

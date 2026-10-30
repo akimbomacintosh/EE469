@@ -7,12 +7,12 @@
 // Parameters:
 //    - a: The ith bit of register a to operate on.
 //    - b: The ith bit of register b to operate on.
-//    - carryIn: A 0 or 1, representing if cout(i - 1) had a carry out bit. 
+//    - carryIn: A 0 or 1, representing cout(i - 1). 
 //    - control: The 3 control bits that tell the MUX which input to send to result
 //      - control[0] is used to determine whether you need to add or "subtract"
 // Outputs: 
 //    - result: The ith bit of result, which will be modified using the input parameters. 
-//    - carryOut: A 0 or 1 representing whether there was "overflow" on the addition of a, b, and carryIn
+//    - carryOut: A 0 or 1 representing whether there was "overflow" on the addition of a, b, and carryIn.
 module alubit (result, carryOut, a, b, carryIn, control);
     output logic result, carryOut;
     input logic a, b, carryIn;
@@ -22,13 +22,6 @@ module alubit (result, carryOut, a, b, carryIn, control);
     logic andOut, orOut, xorOut;
     logic [7:0] choices;
     parameter delay = 0.05;
-
-    // If addition (control[0] = 0): result = A + B
-    //      sumi = ai xor bi xor ci
-    //      ci+1 = (ai and bi) or (ci and (ai and bi))
-    // If subtraction (control[0] = 1): result = A + not(B) + 1
-    //      sumi = ai xor not(bi) xor ci
-    //      ci+1 = (ai and not(bi)) or (ci and (ai and not(bi)))
 
     // b inverter
     // flips b if control[0] is 1 to pass into the adder for subtraction
