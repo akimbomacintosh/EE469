@@ -13,11 +13,11 @@
 //    - zero: 1 if all 64 bits are 0, 0 otherwise.
 //    - overflow: 1 if an add or subtract overflowed when read as 2's comp, 0 otherwise.
 //    - carryOut: 1 if an add or subtract produced a carry out of bit 63, 0 otherwise.
-module alu (A, B, control, result, negative, zero, overflow, carryOut);
+module alu (A, B, cntrl, result, negative, zero, overflow, carry_out);
     input logic [63:0] A, B;
-    input logic [2:0] control;
+    input logic [2:0] cntrl;
     output logic [63:0] result;
-    output logic negative, zero, overflow, carryOut;
+    output logic negative, zero, overflow, carry_out;
     parameter delay = 0.05;
 
     // 65-bit carryOut array that determines if carryOut is true.
@@ -25,22 +25,22 @@ module alu (A, B, control, result, negative, zero, overflow, carryOut);
     //   This array is 65 bits long instead of 64 because you need a place to store carryOut[63]
     logic [64:0] carries;
 
-    // For subtraction (control[0] = 1), A - B = A + not(B) + 1. Each alubit already inverts b
-    //    when control[0] = 1, so the "+ 1" comes from assigning control[0] into the first carry in
+    // For subtraction (cntrl[0] = 1), A - B = A + not(B) + 1. Each alubit already inverts b
+    //    when cntrl[0] = 1, so the "+ 1" comes from assigning cntrl[0] into the first carry in
     //    This works well in our code because we didn't code to include an edge case for slice 0
-    assign carries[0] = control[0];
+    assign carries[0] = cntrl[0];
 
     // Build the 64 alubit slices, linking each carryOut into the next slice's carryIn
     genvar i;
     generate
         for (i = 0; i < 64; i++) begin : slices
             alubit bitSlice (.result(result[i]), .carryOut(carries[i + 1]), .a(A[i]), .b(B[i]),
-                            .carryIn(carries[i]), .control(control));
+                            .carryIn(carries[i]), .control(cntrl));
         end
     endgenerate
 
-    // Assign carryOut flag: the carry out of most significant slice
-    assign carryOut = carries[64];
+    // Assign carry_out flag: the carry out of most significant slice
+    assign carry_out = carries[64];
 
     // Assign overflow flag: 2's comp overflow when carryIn to MSB differs from carryOut of MSB
     xor #delay overflowXOR (overflow, carries[63], carries[64]);
@@ -55,16 +55,16 @@ endmodule
 
 module alu_testbench();
     logic [63:0] A, B, result;
-    logic [2:0] control;
-    logic negative, zero, overflow, carryOut;
+    logic [2:0] cntrl;
+    logic negative, zero, overflow, carry_out;
 
-    alu dut (.A, .B, .control, .result, .negative, .zero, .overflow, .carryOut);
+    alu dut (.A, .B, .cntrl, .result, .negative, .zero, .overflow, .carry_out);
 
     integer i;
     initial begin
         // Run 8 edge cases through every operation (each operation runs in parallel for each test below):
         for (i = 0; i < 8; i++) begin : test
-            control = i; // does all operations. 001 and 111 are unused and output 0.
+            cntrl = i; // does all operations. 001 and 111 are unused and output 0.
 
             // Test 1: A = 1, B = 1;
             // ADD: result = 2; carryOut = 0; overflow = 0;

@@ -14,12 +14,12 @@ vlog "./alustim.sv"
 
 # Call vsim to invoke simulator
 #     Make sure the last item on the line is the name of the
-#     testbench module you want to execute. poopie scoop
-vsim -voptargs="+acc" -t 1ps -lib work alu_testbench
+#     testbench module you want to execute.
+vsim -voptargs="+acc" -t 1ps -lib work alustim
 # Source the wave do file
 #     This should be the file that sets up the signal window for
 #     the module you are testing.
-do alu_wave.do
+do alustim_wave.do
 
 # Set the window types
 view wave
