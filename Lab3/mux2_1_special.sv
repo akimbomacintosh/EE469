@@ -1,7 +1,8 @@
 `timescale 1ns/10ps
+// a special 2:1 mux that allows us to parameterize our width so we can use it for 64 bit registers and 4 bit registers
 module mux2_1_special #(parameter WIDTH = 64) (out, i0, i1, select);
-    output logic [WIDTH-1:0] out;
-    input logic [WIDTH-1:0] i0, i1;
+    output logic [(WIDTH - 1):0] out;
+    input logic [(WIDTH - 1):0] i0, i1;
     input logic select;
 
     // one 2:1 mux for every bit with every copy using the same select signal. 
@@ -27,3 +28,4 @@ module mux2_1_special_testbench();
 		$stop;
 	end
 endmodule
+
