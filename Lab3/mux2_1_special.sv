@@ -10,7 +10,7 @@ module mux2_1_special #(parameter WIDTH = 64) (out, i0, i1, select);
     genvar i;
     generate
         for (i = 0; i < WIDTH; i++) begin : onebit
-            mux2_1 mux (.out(out[i]), .in0(i0[i]), .in1(i1[i]), .sel(select));
+            mux2_1 mux (.out(out[i]), .i0(i0[i]), .i1(i1[i]), .sel(select));
         end
     endgenerate
 endmodule
