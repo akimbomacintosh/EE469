@@ -53,7 +53,7 @@ module cpu_testbench();
         forever #(ClockDelay/2) clk <= ~clk;
     end
 
-    integer i
+    integer i;
     initial begin
         //reset CPU so all data starts at 0
         reset <= 1;
