@@ -40,3 +40,31 @@ module cpu(clk, reset);
     wb wbStage         (.writeData, .aluResult, .memoryData(memData), .pcPlus4, .MemToReg, .Link);
 
 endmodule
+
+module cpu_testbench();
+    logic clk, reset;
+
+    parameter ClockDelay = 5000;
+
+    cpu dut (.clk, .reset);
+
+    initial begin 
+        clk <= 0;
+        forever #(ClockDelay/2) clk <= ~clk;
+    end
+
+    integer i
+    initial begin
+        //reset CPU so all data starts at 0
+        reset <= 1;
+        //Give CPU time to reset
+        @(posedge clk);
+        @(posedge clk);
+        reset <= 0;
+
+        //run program 1000 times, long enough for benchmarks to do their thing.
+        for(i = 0; i < 1000; i++)
+            @(posedge clk);
+        $stop;
+    end
+endmodule
