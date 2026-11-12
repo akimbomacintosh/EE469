@@ -1,6 +1,7 @@
 `timescale 1ns/10ps
 
-module execute (aluResult, aluZero, storedNegative, storedOverflow, dataA, dataB, signExtend9, zeroExtend12, aluSource, aluOp, setFlags, reset, clk);
+module execute (aluResult, aluZero, storedNegative, storedOverflow, dataA, dataB, signExtend9, 
+                zeroExtend12, aluSource, ImmSelect, aluOp, setFlags, reset, clk);
     output logic [63:0] aluResult;
     output logic aluZero, storedNegative, storedOverflow;
     // aluresult is the output of the alu
@@ -8,9 +9,8 @@ module execute (aluResult, aluZero, storedNegative, storedOverflow, dataA, dataB
     // storedNegative and storedoerlow are the saved flags from the operations, control uses them for b.lt
 
     input logic [63:0] dataA, dataB, signExtend9, zeroExtend12;
-    input logic [1:0] aluSource;
     input logic [2:0] aluOp;
-    input logic setFlags, reset, clk;
+    input logic aluSource, ImmSelect, setFlags, reset, clk;
     // data a and data b are the register values from decode
     // signextend9 is the LDUR STUR address offset and zeroextend12 is the addi immediate
     // alusrc picks the second alu input
@@ -33,9 +33,9 @@ module execute (aluResult, aluZero, storedNegative, storedOverflow, dataA, dataB
     // the alus input A is always dataA (Rn), but for input b there could be 3 different possible choices, which are se9, ze12, or dataB.
     // there are two 2:1 muxes to account for the 3 possible choices (see drawing)
     // picks between the two immediates, ze12 or se9 
-    mux2_1_special #(.WIDTH(64)) immediateMux (.out(immediate), .i0(signExtend9), .i1(zeroExtend12), .select(aluSource[1]));
+    mux2_1_special #(.WIDTH(64)) immediateMux (.out(immediate), .i0(signExtend9), .i1(zeroExtend12), .select(ImmSelect));
     // picks between the sign extended immediates or the data from port b on the register
-    mux2_1_special #(.WIDTH(64)) aluSourceMux (.out(aluB), .i0(dataB), .i1(immediate), .select(aluSource[0]));
+    mux2_1_special #(.WIDTH(64)) aluSourceMux (.out(aluB), .i0(dataB), .i1(immediate), .select(aluSource));
 
     // alu from lab 2
     alu gigaAlu (.A(dataA), .B(aluB), .cntrl(aluOp), .result(aluResult), .negative(negative), .zero(zero), .overflow(overflow), .carry_out(carryOut));
@@ -43,7 +43,7 @@ module execute (aluResult, aluZero, storedNegative, storedOverflow, dataA, dataB
     // zero flag for CBZ because it is used right away, comes from alu 
     assign aluZero = zero;
 
-    // the flag resgister that only saves the alu flags when setflags is true so they can be used on a branch later on
+    // the flag resgister that only saves the alu flags when setset is true so they can be used on a branch later on
     register4 flagRegister (.bitsOut(flags), .bitsIn({negative, aluZero, carryOut, overflow}), .enable(setFlags), .clk(clk), .reset(reset));
 
     // single bits to be output for negatives and overflows 
