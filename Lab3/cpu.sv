@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 `timescale 1ns/10ps
 
-=======
->>>>>>> f976e45b7b8daf47d2a106bb5cd563025f394e84
 // Top level file for Single-Cycle CPU. 
 // This file essentially just connects all the wires between stages. 
 //      iFetch --> decode --> execute --> mem --> wb
@@ -38,45 +35,8 @@ module cpu(clk, reset);
     execute execStage  (.aluResult, .aluZero, .storedNegative, .storedOverflow, .dataA, .dataB,
                         .signExtend9, .zeroExtend12, .aluSource, .ImmSelect, .aluOp, .setFlags, .reset, .clk);
 
-<<<<<<< HEAD
     mem memoryStage    (.memData, .aluResult, .dataB, .MemWrite, .MemRead, .clk);
 
     wb wbStage         (.writeData, .aluResult, .memoryData(memData), .pcPlus4, .MemToReg, .Link);
-=======
-    mem memoryStage (.memData, .aluResult, .dataB, .MemWrite, .MemRead, .clk);
-
-    wb wbStage (.writeData, .aluResult, .memoryData, .pcPlus4, .MemtoReg, .Link);
-
-endmodule
-
-
-
-module cpu_testbench();
-    logic clk, reset;
-
-    parameter ClockDelay = 5000;
-
-    cpu dut (.clk, .reset);
-
-    initial begin 
-        clk <= 0;
-        forever #(ClockDelay/2) clk <= ~clk;
-    end
-
-    integer i
-    initial begin
-        //reset CPU so all data starts at 0
-        reset <= 1;
-        //Give CPU time to reset
-        @(posedge clk);
-        @(posedge clk);
-        reset <= 0;
-
-        //run program 1000 times, long enough for benchmarks to do their thing.
-        for(i = 0; i < 1000; i++)
-            @(posedge clk);
-        $stop;
-    end
->>>>>>> f976e45b7b8daf47d2a106bb5cd563025f394e84
 
 endmodule
