@@ -1,17 +1,17 @@
 `timescale 1ns/10ps
 
 // instruction fetch state of the CPU that holds the proram counter, reads the current instruction and picks the next program counter
-module iFetch (programCounter, pcPlus4, instruction, signExtend19, signExtend26, datab, unconditionalBranch, branchTaken, branchRegister, reset, clk);
+module iFetch (programCounter, pcPlus4, instruction, signExtend19, signExtend26, dataB, unconditionalBranch, branchTaken, branchRegister, reset, clk);
     output logic [63:0] programCounter, pcPlus4;
     // programcounter is the address we are currently running in the cpu
     // pcPlus4 is the address of the next instruction in the cpu
 
     output logic [31:0] instruction;
-    input logic [63:0] signExtend19, signExtend26, datab;
+    input logic [63:0] signExtend19, signExtend26, dataB;
     input logic unconditionalBranch, branchTaken, branchRegister, reset, clk;
     // unconditionalBranch is on pcmux1 and picks between the 19 bit offset for B.LT or CBZ, or the 26 bit offset for B or BL
     // branchTaken is on pcmux2 and picks between the next instruction or the branch target
-    // branchRegister is on pcmux3 and picks between the next instruction or the value in datab
+    // branchRegister is on pcmux3 and picks between the next instruction or the value in dataB
 
     logic [63:0] nextPC, branchOffset, branchOffsetShift, branchTarget, pcAfterBranch;
     // branchOffset holds how far we would need to jump for a branch instrcution
@@ -39,12 +39,12 @@ module iFetch (programCounter, pcPlus4, instruction, signExtend19, signExtend26,
     alu branchAdder (.A(programCounter), .B(branchOffsetShift), .cntrl(3'b010), .result(branchTarget));
     // pick between PC + 4 or the branch target
     mux2_1_special #(.WIDTH(64)) pcMux2 (.out(pcAfterBranch), .i0(pcPlus4), .i1(branchTarget), .select(branchTaken));
-    // pick between the next instruction or the value in datab
-    mux2_1_special #(.WIDTH(64)) pcMux3 (.out(nextPC), .i0(pcAfterBranch), .i1(datab), .select(branchRegister));
+    // pick between the next instruction or the value in dataB
+    mux2_1_special #(.WIDTH(64)) pcMux3 (.out(nextPC), .i0(pcAfterBranch), .i1(dataB), .select(branchRegister));
 endmodule
 
 module iFetch_testbench();
-    logic [63:0] programCounter, pcPlus4, signExtend19, signExtend26, datab;
+    logic [63:0] programCounter, pcPlus4, signExtend19, signExtend26, dataB;
     logic [31:0] instruction;
     logic unconditionalBranch, branchTaken, branchRegister, reset, clk;
     parameter delay = 5000;
@@ -54,13 +54,13 @@ module iFetch_testbench();
 		forever #(delay/2) clk <= ~clk;
 	end
 
-    iFetch dut (.programCounter, .pcPlus4, .instruction, .signExtend19, .signExtend26, .datab, .unconditionalBranch, .branchTaken, .branchRegister, .reset, .clk);
+    iFetch dut (.programCounter, .pcPlus4, .instruction, .signExtend19, .signExtend26, .dataB, .unconditionalBranch, .branchTaken, .branchRegister, .reset, .clk);
 
 	initial begin
 		// initialize all values to 0 and reset the CPU
 		signExtend19 <= 64'd0;
 		signExtend26 <= 64'd0;
-		datab <= 64'd0;
+		dataB <= 64'd0;
 		unconditionalBranch <= 0;
 		branchTaken <= 0;
 		branchRegister <= 0;
@@ -85,10 +85,10 @@ module iFetch_testbench();
         signExtend19 <= -64'd1;
 		@(posedge clk);
 
-        // BR which is jumping to address in datab, pc should go to 40
+        // BR which is jumping to address in dataB, pc should go to 40
         branchTaken <= 0;
 		branchRegister <= 1;
-		datab <= 64'd40;
+		dataB <= 64'd40;
 		@(posedge clk);
 
         // go back to normal clock increments, pc should go to 44
