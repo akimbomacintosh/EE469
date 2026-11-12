@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 `timescale 1ns/10ps
 
-=======
->>>>>>> f976e45b7b8daf47d2a106bb5cd563025f394e84
 // Top level file for Single-Cycle CPU. 
 // This file essentially just connects all the wires between stages. 
 //      iFetch --> decode --> execute --> mem --> wb
@@ -38,18 +35,11 @@ module cpu(clk, reset);
     execute execStage  (.aluResult, .aluZero, .storedNegative, .storedOverflow, .dataA, .dataB,
                         .signExtend9, .zeroExtend12, .aluSource, .ImmSelect, .aluOp, .setFlags, .reset, .clk);
 
-<<<<<<< HEAD
     mem memoryStage    (.memData, .aluResult, .dataB, .MemWrite, .MemRead, .clk);
 
     wb wbStage         (.writeData, .aluResult, .memoryData(memData), .pcPlus4, .MemToReg, .Link);
-=======
-    mem memoryStage (.memData, .aluResult, .dataB, .MemWrite, .MemRead, .clk);
-
-    wb wbStage (.writeData, .aluResult, .memoryData, .pcPlus4, .MemtoReg, .Link);
 
 endmodule
-
-
 
 module cpu_testbench();
     logic clk, reset;
@@ -77,6 +67,4 @@ module cpu_testbench();
             @(posedge clk);
         $stop;
     end
->>>>>>> f976e45b7b8daf47d2a106bb5cd563025f394e84
-
 endmodule
