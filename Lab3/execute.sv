@@ -1,7 +1,6 @@
 `timescale 1ns/10ps
 
-module execute (aluResult, aluZero, storedNegative, storedOverflow, dataA, dataB, signExtend9, 
-                zeroExtend12, aluSource, ImmSelect, aluOp, setFlags, reset, clk);
+module execute (aluResult, aluZero, storedNegative, storedOverflow, dataA, dataB, signExtend9, zeroExtend12, aluSource, ImmSelect, aluOp, setFlags, reset, clk);
     output logic [63:0] aluResult;
     output logic aluZero, storedNegative, storedOverflow;
     // aluresult is the output of the alu
@@ -9,14 +8,16 @@ module execute (aluResult, aluZero, storedNegative, storedOverflow, dataA, dataB
     // storedNegative and storedoerlow are the saved flags from the operations, control uses them for b.lt
 
     input logic [63:0] dataA, dataB, signExtend9, zeroExtend12;
+    input logic aluSource, ImmSelect;
     input logic [2:0] aluOp;
-    input logic aluSource, ImmSelect, setFlags, reset, clk;
+    input logic setFlags, reset, clk;
     // data a and data b are the register values from decode
     // signextend9 is the LDUR STUR address offset and zeroextend12 is the addi immediate
     // alusrc picks the second alu input
     //         - 00: dataB
     //         - 01: signExtend9
     //         - 10: zeroExtend12
+    // THE ABOVE IS WRONG AND WAS CHANGED, NOW TWO ONE BIT SELECTS ALUSOURCE AND IMMSELECT
     // aluop is the control for the ALU
     //        - 000: passes b
     //        - 010: adds
@@ -43,7 +44,7 @@ module execute (aluResult, aluZero, storedNegative, storedOverflow, dataA, dataB
     // zero flag for CBZ because it is used right away, comes from alu 
     assign aluZero = zero;
 
-    // the flag resgister that only saves the alu flags when setset is true so they can be used on a branch later on
+    // the flag resgister that only saves the alu flags when setflags is true so they can be used on a branch later on
     register4 flagRegister (.bitsOut(flags), .bitsIn({negative, aluZero, carryOut, overflow}), .enable(setFlags), .clk(clk), .reset(reset));
 
     // single bits to be output for negatives and overflows 
@@ -54,7 +55,7 @@ endmodule
 module execute_testbench();
     logic [63:0] aluResult, dataA, dataB, signExtend9, zeroExtend12;
     logic aluZero, storedNegative, storedOverflow;
-    logic [1:0] aluSource;
+    logic aluSource, ImmSelect;
     logic [2:0] aluOp;
     logic setFlags, reset, clk;
     parameter ClockDelay = 5000;
@@ -65,7 +66,7 @@ module execute_testbench();
     end
 
     execute dut (.aluResult, .aluZero, .storedNegative, .storedOverflow, .dataA, .dataB,
-                 .signExtend9, .zeroExtend12, .aluSource, .aluOp, .setFlags, .reset, .clk);
+                 .signExtend9, .zeroExtend12, .aluSource, .ImmSelect, .aluOp, .setFlags, .reset, .clk);
     
     initial begin 
         // reset flags register, initialize the hardware with se9 = -8, ze12 = 3
@@ -73,7 +74,7 @@ module execute_testbench();
         dataB <= 64 'd7; // dataB = 7
         signExtend9 <= -64'd8; // se9 = -8
         zeroExtend12 <= 64'd3; // ze12 = 3
-        aluSource <= 2'b00; 
+        aluSource <= 0; 
         aluOp <= 3'b000;
         setFlags <= 0;
         reset <= 1;
@@ -81,12 +82,14 @@ module execute_testbench();
         reset <= 0;
 
         // test addi but picking zero extend, dataA + ze12 = 5 + 3 = 8
-        aluSource <= 2'b11;
+        aluSource <= 1;
         aluOp <= 3'b010;
+        ImmSelect <= 1;
         @(posedge clk);
 
         // test ldur or stur, alusource picks se9, so 5 + -8 = -3
-        aluSource <= 2'b01;
+        aluSource <= 1;
+        ImmSelect <= 0;
         @(posedge clk);
 
         //test alu source qualling zero, so it picks dataB. 5 - 7 = -2

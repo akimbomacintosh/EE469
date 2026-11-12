@@ -20,16 +20,21 @@ vlog "./decode.sv"
 vlog "./decoder5_32.sv"
 vlog "./regfile4.sv"
 vlog "./execute.sv"
+vlog "./mem.sv"
 vlog "./wb.sv"
+vlog "./control.sv"
+vlog "./cpu.sv"
+vlog "./cpustim.sv"
+vlog "./datamem.sv"
 
 # Call vsim to invoke simulator
 #     Make sure the last item on the line is the name of the
 #     testbench module you want to execute.
-vsim -voptargs="+acc" -t 1ps -lib work wb_testbench
+vsim -voptargs="+acc" -t 1ps -lib work cpustim
 # Source the wave do file
 #     This should be the file that sets up the signal window for
 #     the module you are testing.
-do wb_testbench_wave.do
+do cpustim_wave.do
 
 # Set the window types
 view wave
