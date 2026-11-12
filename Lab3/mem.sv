@@ -40,7 +40,7 @@ module mem_testbench();
         MemWrite <= 0; MemRead <= 1; //LDUR
         #10; //give values time to settle
         //memData result should be 1234 (shows little endian memory assembled in new correct order)
-        $stop 
+        $stop; 
     end
 
 endmodule
