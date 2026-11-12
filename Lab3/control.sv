@@ -118,19 +118,18 @@ module control_testbench();
         // and correspond to our processor block diagram.
         cond = 5'b01011; zero = 1'b0; flagN = 1'b0; flagV = 1'b0;
 
-        opcode = 11'b10101011000; #10 //ADDI
-        opcode = 11'b10101011000; #10 //ADDS
-        opcode = 11'b11111000010; #10 //LDUR
-        opcode = 11'b11111000000; #10 //STUR
-        opcode = 11'b11101011000; #10 //SUBS
-        opcode = 11'b00010100000; #10 //B
-        opcode = 11'b00010110101; #10 //B again, with different bottom opcode bits.
-        opcode = 11'b01010100000; #10 //B.cond (B.LT), Branch not taken
-        flagN = 1'b1;             #10 //B. cond (B.LT), Branch taken
-        opcode = 11'b10010100000; #10 //BL
-        opcode = 11'b11010110000; #10 //BR
-        opcode = 11'b10110100000; #10 //CBZ, not taken
-        zero = 1'b1;              #10 //CBZ, taken        
+        opcode = 11'b10101011000; #10; //ADDI
+        opcode = 11'b10101011000; #10; //ADDS
+        opcode = 11'b11111000010; #10; //LDUR
+        opcode = 11'b11111000000; #10; //STUR
+        opcode = 11'b11101011000; #10; //SUBS
+        opcode = 11'b00010100000; #10; //B
+        opcode = 11'b00010110101; #10; //B again, with different bottom opcode bits.
+        opcode = 11'b01010100000; #10; //B.cond (B.LT), Branch not taken
+        flagN = 1'b1;             #10; //B. cond (B.LT), Branch taken
+        opcode = 11'b10010100000; #10; //BL
+        opcode = 11'b11010110000; #10; //BR
+        opcode = 11'b10110100000; #10; //CBZ, not taken
+        zero = 1'b1;              #10; //CBZ, taken        
     end
-
 endmodule 
