@@ -118,7 +118,7 @@ module control_testbench();
         // and correspond to our processor block diagram.
         cond = 5'b01011; zero = 1'b0; flagN = 1'b0; flagV = 1'b0;
 
-        opcode = 11'b10101011000; #10; //ADDI
+        opcode = 11'b10010001000; #10; //ADDI
         opcode = 11'b10101011000; #10; //ADDS
         opcode = 11'b11111000010; #10; //LDUR
         opcode = 11'b11111000000; #10; //STUR
