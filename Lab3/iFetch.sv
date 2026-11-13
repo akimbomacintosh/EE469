@@ -32,11 +32,13 @@ module iFetch (programCounter, pcPlus4, instruction, signExtend19, signExtend26,
     instructmem instructionMemory (.instruction(instruction), .address(programCounter), .clk(clk));
 
     // does pc + 4 to get next instruction address
-    alu pcadder (.A(programCounter), .B(64'b100), .cntrl(3'b010), .result(pcPlus4));
+    // alu pcadder (.A(programCounter), .B(64'b100), .cntrl(3'b010), .result(pcPlus4));
+    adder64 pcadder (.sum(pcPlus4), .a(programCounter), .b(64'b100));
     // does the 19 bit offset address for B.LT or CBZ, or the 26 bit offset for B or BL
     mux2_1_special #(.WIDTH(64)) pcMux1 (.out(branchOffset), .i0(signExtend19), .i1(signExtend26), .select(unconditionalBranch));
     // new target is pc + offset
-    alu branchAdder (.A(programCounter), .B(branchOffsetShift), .cntrl(3'b010), .result(branchTarget));
+    // alu branchAdder (.A(programCounter), .B(branchOffsetShift), .cntrl(3'b010), .result(branchTarget));
+    adder64 branchAdder (.sum(branchTarget), .a(programCounter), .b(branchOffsetShift));
     // pick between PC + 4 or the branch target
     mux2_1_special #(.WIDTH(64)) pcMux2 (.out(pcAfterBranch), .i0(pcPlus4), .i1(branchTarget), .select(branchTaken));
     // pick between the next instruction or the value in dataB

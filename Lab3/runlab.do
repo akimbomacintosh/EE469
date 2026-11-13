@@ -26,6 +26,7 @@ vlog "./control.sv"
 vlog "./cpu.sv"
 vlog "./cpustim.sv"
 vlog "./datamem.sv"
+vlog "./adder64.sv"
 
 # Call vsim to invoke simulator
 #     Make sure the last item on the line is the name of the
