@@ -63,7 +63,6 @@ module control (opcode, cond, aluZero, storedNegative, storedOverflow, Reg2Loc, 
                 branchTaken = (cond == 5'b01011) & (storedNegative ^ storedOverflow);
                 unconditionalBranch = 1'b0;
             end
-
             //BL Instruction
             else if(opcode[10:5] == 6'b100101)begin
                 unconditionalBranch = 1'b1; branchTaken = 1'b1;

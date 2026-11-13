@@ -6,12 +6,12 @@
 //`define BENCHMARK "../benchmarks/test01_AddiB.arm" CHECKED
 //`define BENCHMARK "../benchmarks/test02_AddsSubs.arm" CHECKED
 //`define BENCHMARK "../benchmarks/test03_CbzB.arm" CHECKED
-//`define BENCHMARK "../benchmarks/test04_LdurStur.arm" CHECKED
+`define BENCHMARK "../benchmarks/test04_LdurStur.arm" CHECKED
 //`define BENCHMARK "../benchmarks/test05_Blt.arm" CHECKED
 //`define BENCHMARK "../benchmarks/test06_BlBr.arm" CHECKED
 //`define BENCHMARK "../benchmarks/test10_forwarding.arm" CHECKED
 //`define BENCHMARK "../benchmarks/test11_Sort.arm" CHECKED
-`define BENCHMARK "../benchmarks/test12_Fibonacci.arm"
+//`define BENCHMARK "../benchmarks/test12_Fibonacci.arm"
 
 `timescale 1ns/10ps
 

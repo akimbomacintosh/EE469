@@ -8,7 +8,7 @@ module adder64 (sum, a, b);
     logic [64:0] carries;
     assign carries[0] = 1'b0;
     genvar i;
-    
+            // this is basically 64 full adders (which are one bit only)
     generate
         for (i = 0; i < 64; i++) begin : eachbit
             full_adder adder (.sum(sum[i]), .cout(carries[i + 1]), .a(a[i]), .b(b[i]), .carryIn(carries[i]));
