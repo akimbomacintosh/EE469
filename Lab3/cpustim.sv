@@ -114,10 +114,75 @@ module cpustim();
             assert(dut.decodeStage.registers.regs[0] == 64'd1);
             assert(dut.decodeStage.registers.regs[1] == 64'd1);
         end
+        if (TESTNUM == 6) begin
+            // Test 6 BL, BR
+            $display("Running Test 6: BL, BR");
+            assert(dut.decodeStage.registers.regs[0] == 64'd1);
+            assert(dut.decodeStage.registers.regs[1] == 64'd0);
+            assert(dut.decodeStage.registers.regs[2] == 64'd0); //anything else indicates error
+            assert(dut.decodeStage.registers.regs[3] == 64'd1); //signifies program end was reached
+            assert(dut.decodeStage.registers.regs[4] == 64'd52);
+            assert(dut.decodeStage.registers.regs[5] == 64'd64);
+            assert(dut.decodeStage.registers.regs[30] == 64'd68);
+        end
+        if(TESTNUM == 10) begin
+            //Test 10: Forwarding
+            $display("Running Test 10: Forwarding");
+            assert(dut.decodeStage.registers.regs[0] == 64'd0);
+            assert(dut.decodeStage.registers.regs[1] == 64'd8);
+            assert(dut.decodeStage.registers.regs[2] == 64'd0); // 0 for single-cycle cpu, 4 for pipelined
+            assert(dut.decodeStage.registers.regs[3] == 64'd5);
+            assert(dut.decodeStage.registers.regs[4] == 64'd7);
+            assert(dut.decodeStage.registers.regs[5] == 64'd2);
+            assert(dut.decodeStage.registers.regs[6] == -64'd2);
+            assert(dut.decodeStage.registers.regs[7] == -64'd2);
+            assert(dut.decodeStage.registers.regs[8] == 64'd0);
+            assert(dut.decodeStage.registers.regs[9] == 64'd1);
+            assert(dut.decodeStage.registers.regs[10] == -64'd4);
+            assert(dut.decodeStage.registers.regs[14] == 64'd5);
+            assert(dut.decodeStage.registers.regs[15] == 64'd8);
+            assert(dut.decodeStage.registers.regs[16] == 64'd9);
+            assert(dut.decodeStage.registers.regs[17] == 64'd1);
+            assert(dut.decodeStage.registers.regs[18] == 64'd99);
+            assert({dut.memoryStage.dataMemory.mem[7],
+                    dut.memoryStage.dataMemory.mem[6],
+                    dut.memoryStage.dataMemory.mem[5], 
+                    dut.memoryStage.dataMemory.mem[4],
+                    dut.memoryStage.dataMemory.mem[3], 
+                    dut.memoryStage.dataMemory.mem[2],
+                    dut.memoryStage.dataMemory.mem[1], 
+                    dut.memoryStage.dataMemory.mem[0]} == 64'd8);
+            assert({dut.memoryStage.dataMemory.mem[15],
+                    dut.memoryStage.dataMemory.mem[14],
+                    dut.memoryStage.dataMemory.mem[13], 
+                    dut.memoryStage.dataMemory.mem[12],
+                    dut.memoryStage.dataMemory.mem[11], 
+                    dut.memoryStage.dataMemory.mem[10],
+                    dut.memoryStage.dataMemory.mem[9], 
+                    dut.memoryStage.dataMemory.mem[8]} == 64'd5);
+        end
+        if(TESTNUM == 11) begin
+            // Test 11: Sort
+            $display("Running Test 11: Sort");
+            assert(dut.decodeStage.registers.regs[11] == 64'd1);
+            assert(dut.decodeStage.registers.regs[12] == 64'd2);
+            assert(dut.decodeStage.registers.regs[13] == 64'd3);
+            assert(dut.decodeStage.registers.regs[14] == 64'd4);
+            assert(dut.decodeStage.registers.regs[15] == 64'd5);
+            assert(dut.decodeStage.registers.regs[16] == 64'd6);
+            assert(dut.decodeStage.registers.regs[17] == 64'd7);
+            assert(dut.decodeStage.registers.regs[18] == 64'd8);
+            assert(dut.decodeStage.registers.regs[19] == 64'd9);
+            assert(dut.decodeStage.registers.regs[20] == 64'd10);
+        end 
+        if(TESTNUM == 12) begin
+            // Test 12: Fibonacci
+            $display("Running Test 12: Fibonacci");
+            assert(dut.decodeStage.registers.regs[0] == 64'd6); // N
+            assert(dut.decodeStage.registers.regs[1] == 64'd8); //result of fibonacci with N = 6
+            assert(dut.decodeStage.registers.regs[28] == 64'd8);
+            assert(dut.decodeStage.registers.regs[30] == 64'd196);
+        end
         $stop;
     end
-
-
-
-
 endmodule
